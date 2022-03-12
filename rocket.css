@@ -1,0 +1,56 @@
+*{
+    /* 格式化 */
+    padding: 0px;
+    margin:0px;
+    /* 设置盒子大小计算方式 width = content + border +padding */
+    box-sizing: border-box;
+}
+.scene{
+    position: relative;
+    /* 设置大小 */
+    width:100%;
+    height:100vh;
+    /* 设置背景色 */
+    background: #01070a;
+    overflow: hidden;
+    /* 设置显示模式为弹性盒子 */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.scene i{
+    position: absolute;
+    top:-250px;
+    background: rgba(255,255,255,0.5);
+    animation: Stars linear infinite;
+}
+@keyframes Stars {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(200vh) ;
+    }
+}
+.scene .rocket{
+    position: relative;
+    animation: fly 0.2s ease infinite ;
+}
+@keyframes fly {
+    0%,100%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+}
+.scene .rocket::before{
+    content:"";
+    width:5px;
+    height:240px;
+    position: absolute;
+    bottom: -235px;
+    left:50%;
+    transform: translate(-50%,0);
+    background:linear-gradient(#00d0ff,transparent);
+}
